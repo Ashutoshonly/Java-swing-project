@@ -251,7 +251,90 @@ public class Calcu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-   //define button and text functions here
+    private void zeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zeroActionPerformed
+       String enternumber=jTextField1.getText()+zero.getText();
+        jTextField1.setText(enternumber); // TODO add your handling code here:
+    }//GEN-LAST:event_zeroActionPerformed
+
+    private void oneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneActionPerformed
+        // TODO add your handling code here:
+        String enternumber=jTextField1.getText()+one.getText();
+        jTextField1.setText(enternumber);
+    }//GEN-LAST:event_oneActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+//String enternumber=jTextField1.getText()+jButton2.getText();
+     //   jTextField1.setText(enternumber);      
+        // TODO add your handling code here:
+          jTextField1.setText(jTextField1.getText()+jButton2.getText());
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+String enternumber=jTextField1.getText()+jButton3.getText();
+        jTextField1.setText(enternumber);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void fourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourActionPerformed
+String enternumber=jTextField1.getText()+four.getText();
+        jTextField1.setText(enternumber);        // TODO add your handling code here:
+    }//GEN-LAST:event_fourActionPerformed
+
+    private void fiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fiveActionPerformed
+String enternumber=jTextField1.getText()+five.getText();
+        jTextField1.setText(enternumber);          // TODO add your handling code here:
+    }//GEN-LAST:event_fiveActionPerformed
+
+    private void sixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sixActionPerformed
+String enternumber=jTextField1.getText()+six.getText();
+        jTextField1.setText(enternumber);          // TODO add your handling code here:
+    }//GEN-LAST:event_sixActionPerformed
+
+    private void sevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sevenActionPerformed
+String enternumber=jTextField1.getText()+seven.getText();
+        jTextField1.setText(enternumber);          // TODO add your handling code here:
+    }//GEN-LAST:event_sevenActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+String enternumber=jTextField1.getText()+jButton9.getText();
+        jTextField1.setText(enternumber);          // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void nineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nineActionPerformed
+String enternumber=jTextField1.getText()+nine.getText();
+        jTextField1.setText(enternumber);          // TODO add your handling code here:
+    }//GEN-LAST:event_nineActionPerformed
+
+    private void plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusActionPerformed
+
+        fno=Double.parseDouble(jTextField1.getText());
+           jTextField1.setText("");
+          operation="+";// TODO add your handling code here:
+    }//GEN-LAST:event_plusActionPerformed
+
+    private void minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusActionPerformed
+fno=Double.parseDouble(jTextField1.getText());
+           jTextField1.setText("");
+          operation="-";        // TODO add your handling code here:
+    }//GEN-LAST:event_minusActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+fno=Double.parseDouble(jTextField1.getText());
+           jTextField1.setText("");
+          operation="*";        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+fno=Double.parseDouble(jTextField1.getText());
+           jTextField1.setText("");
+          operation="/";        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        if(!jTextField1.toString(). contains(".")){
+        String enternumber=jTextField1.getText()+jButton18.getText();
+        jTextField1.setText(".");
+    }// TODO add your handling code here:
+    }//GEN-LAST:event_jButton18ActionPerformed
 
     private void cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cActionPerformed
         jTextField1.setText("");        // TODO add your handling code here:
@@ -259,8 +342,24 @@ public class Calcu extends javax.swing.JFrame {
 
     private void resActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resActionPerformed
 
-       
-	   //write your logic of calculator here
+        String res;
+   sno=Double.parseDouble(jTextField1.getText());
+     if(operation=="+"){
+     result=fno+sno;
+   res =String.valueOf(result);
+       jTextField1.setText(res);}
+    else if(operation=="-"){
+     result=fno-sno;
+       res=String.format("%.0f",result);
+       jTextField1.setText(res);}
+else if(operation=="*"){
+     result=fno*sno;
+       res=String.format("%.0f",result);
+       jTextField1.setText(res);} 
+else if(operation=="/"){
+     result=fno/sno;
+       res=String.format("%.0f",result);
+       jTextField1.setText(res);}// TODO add your handling code here:
     }//GEN-LAST:event_resActionPerformed
 
     /**
