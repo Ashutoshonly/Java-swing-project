@@ -229,7 +229,40 @@ public class registration extends javax.swing.JFrame {
       try{
           Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","System","system");
     //Statement st=conn.createStatement();
-         //add logic for get the data from text field and insert it into the oracle database through prepared statement
+          String name=jTextField1.getText();
+          byte[]p_image=null;
+           String password=String.valueOf(jPasswordField1.getPassword());
+           String gender;
+           String dob=jTextField4.getText();
+           String mobileno=jTextField5.getText();
+           String email=jTextField6.getText();
+           String address=jTextField7.getText();
+           String state;
+           String nation=jTextField9.getText();
+    
+    String sql="insert into utab(name,gender,password,dob,mobileno,email,address,state,nationality)values(?,?,?,?,?,?,?,?,?)";
+    PreparedStatement ps=conn.prepareStatement(sql);
+    ps.setString(1,name);
+    if(jRadioButton1.isSelected())
+    {
+     gender="Male";
+    }
+    else
+    {
+     gender="Female";
+    }
+    ps.setString(2,gender);
+    ps.setString(3,password);
+    ps.setString(4,dob);
+    ps.setString(5,mobileno);
+    ps.setString(6,email);
+    ps.setString(7,address);
+    state=jComboBox1.getSelectedItem().toString();
+    ps.setString(8,state);
+    ps.setString(9,nation);
+       JOptionPane.showMessageDialog(this,"registerd successfully", "Message", 2);//showMessageDialog(this,"login successful");
+    ps.executeUpdate();
+    
       }
       catch(Exception e)
               {
